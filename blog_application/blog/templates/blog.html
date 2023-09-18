@@ -1,0 +1,23 @@
+{% load static %}
+{% block page_header %}
+    {% include 'base.html' %}
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <div class="col-md-12" id = "data" data-spy="scroll" style="height: 700px; overflow:scroll;padding-top: 50%;
+    padding-bottom: 37%;
+    background-color: #ffffff;">
+        <!-- width: 500px; height: 700px;  -->
+        {% for i in data.blogs %}   
+        <div class="container-fluid well">
+            <a href=""><h5 class="glyphicon glyphicon-map-marker"> {{i.title}}<h5></a>
+            <br>
+            {{i.content}}, {{i.author}}
+            <br>
+        </div> 
+        {%endfor%}
+    </div>
+</div>
+
+{% endblock %}

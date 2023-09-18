@@ -2,8 +2,6 @@ migrations/
 env/
 __pycache__
 
-*.log
-*.pot
 *.pyc
 __pycache__/
 

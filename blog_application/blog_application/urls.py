@@ -16,6 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from blog import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.Login.as_view(), name= 'login'),
+    path('api/login', views.Login.as_view(), name= 'login'),
+    path('api/register', views.UserCreate.as_view(), name="register"),
+    path('api/user/blog', views.BlogView.as_view(), name="list_blog"),
+    path('api/user/blog/<pk>', views.BlogView.as_view(), name="update_blog"),
+    # path('en/blog/<pk>/update', views.BlogView.as_view()),
+    path('api/user/comment', views.CommentView.as_view(), name="comment_blog"),
+    # path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
